@@ -9,19 +9,6 @@ public class PlayerFollowCamera : MonoBehaviour
     public GhostChenger m_ghostChanger;
     public float m_speed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
-
     private void LateUpdate()
     {
         Vector3 targetPos = m_ghostChanger.IsSpiritBody ? m_SpiritualBodyTransform.position : m_PhysicalBodyTransform.position;
