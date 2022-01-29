@@ -349,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rig2D: {fileID: 2097651821}
   MaxSpeed: 20
-  JumpPower: 15
+  JumpPower: 4
   Speed: 10
 --- !u!50 &2097651821
 Rigidbody2D:
