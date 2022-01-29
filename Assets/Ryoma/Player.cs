@@ -5,10 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D Rig2D;
-    public Player PL;
-    public GameObject Ghost; public Ghost G;
     Vector2 direction;
-    public float MaxSpeed, JumpPower,Speed;
+    public float MaxSpeed, JumpPower,Speed, Gravity;
+    public bool Jump;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,24 +20,27 @@ public class Player : MonoBehaviour
         if(Rig2D.velocity.magnitude < MaxSpeed)
         {
             direction.x = Input.GetAxis("Horizontal")* Speed;
-            Rig2D.AddForce(direction);
         }
-        if (Input.GetKeyDown("z"))
-        {
-            G.PX = transform.position.x;
-            G.PY = transform.position.y;
-            Ghost.SetActive(true);
-            PL.enabled = false;   
-        }
-    }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "yuka")
+        Rig2D.velocity = direction;
+        if (!Jump)
         {
             if (Input.GetKeyDown("space"))
             {
-                Rig2D.AddForce(transform.up * JumpPower, ForceMode2D.Impulse);
+                Debug.Log(Jump);
+                direction.y = JumpPower;
+                Jump = true;
             }
+        }
+        if (Jump)
+        {
+            direction.y -= Gravity;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "yuka")
+        {
+            Jump = false;
         }
     }
 }
