@@ -8,17 +8,12 @@ public class DeathArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && m_forPhysical)
         {
-            var status = collision.GetComponent<PlayerStatus>();
-            if (m_forPhysical)
-            {
-                status?.KillPhysical();
-            }
-            else
-            {
-                status?.KillSpiritual();
-            }
+            collision.GetComponent<PlayerStatus>()?.KillPhysical();
+        }else if (collision.tag == "Ghost" && !m_forPhysical)
+        {
+            collision.gameObject.GetComponentInParent<PlayerStatus>()?.KillSpiritual();
         }
     }
 }
