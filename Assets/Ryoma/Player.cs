@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 30;
+        Jump = true;
     }
 
     // Update is called once per frame
