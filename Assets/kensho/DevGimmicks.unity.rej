@@ -1,0 +1,10 @@
+diff a/Assets/kensho/DevGimmicks.unity b/Assets/kensho/DevGimmicks.unity	(rejected hunks)
+@@ -178,7 +178,7 @@
+   JumpPower: 10
+   Speed: 10
+   Gravity: 1
+-  Jump: 0
++  Jump: 1
+ --- !u!50 &16092549
+ Rigidbody2D:
+   serializedVersion: 4
