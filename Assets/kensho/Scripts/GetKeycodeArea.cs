@@ -11,6 +11,7 @@ public class GetKeycodeArea : MonoBehaviour
         if (collision.tag == "Player")
         {
             StageStateRegistry.Instance.AddCollectedKey(m_keyName);
+            Debug.Log($"Collected Key:{m_keyName}!!");
         }
     }
 }

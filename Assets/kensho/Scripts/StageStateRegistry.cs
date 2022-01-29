@@ -14,9 +14,24 @@ public class StageStateRegistry
     }
 
     private HashSet<string> collectedKeys;
+    private Vector3 playerSpawnPoint;
+
+    public Vector3 PlayerSpawnPoint
+    {
+        get
+        {
+            return playerSpawnPoint;
+        }
+        set
+        {
+            playerSpawnPoint = value;
+        }
+    }
+
     private StageStateRegistry()
     {
         collectedKeys = new HashSet<string>();
+        playerSpawnPoint = new Vector3();
     }
 
     public void AddCollectedKey(string keyName)
