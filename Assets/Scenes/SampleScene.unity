@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rig: {fileID: 2138184180}
-  speed: 5
+  speed: 10
   PX: 0
   PY: 0
 --- !u!50 &2138184180
