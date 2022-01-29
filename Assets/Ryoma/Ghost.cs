@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public GameObject PLPos;
-    public Player Player;
     float MoveX,MoveY;
     public Rigidbody2D Rig;
     public float speed, PX,PY;
@@ -20,13 +18,6 @@ public class Ghost : MonoBehaviour
     {
         MoveX = Input.GetAxis("Horizontal");
         MoveY = Input.GetAxis("Vertical");
-        if (Input.GetKeyDown("z"))
-        {
-            transform.position = new Vector2(PX,PY+2);
-
-            Player.enabled = true;
-            this.gameObject.SetActive(false);
-        }  
     }
     private void FixedUpdate()
     {
