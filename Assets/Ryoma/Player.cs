@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
             {
                 Debug.Log(Jump);
                 direction.y = JumpPower;
-                Jump = true;
             }
         }
         if (Jump)
@@ -42,6 +41,13 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "yuka")
         {
             Jump = false;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "yuka")
+        {
+            Jump = true;
         }
     }
 }
