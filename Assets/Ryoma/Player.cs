@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D Rig2D;
+    public Player PL;
+    public GameObject Ghost; public Ghost G;
     Vector2 direction;
     public float MaxSpeed, JumpPower,Speed;
     // Start is called before the first frame update
@@ -20,6 +22,13 @@ public class Player : MonoBehaviour
         {
             direction.x = Input.GetAxis("Horizontal")* Speed;
             Rig2D.AddForce(direction);
+        }
+        if (Input.GetKeyDown("z"))
+        {
+            G.PX = transform.position.x;
+            G.PY = transform.position.y;
+            Ghost.SetActive(true);
+            PL.enabled = false;   
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
