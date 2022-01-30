@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LinearPingPongMove : MonoBehaviour
+public class LinearPingPongMove : MonoBehaviour, IHasActive
 {
     public bool m_isActive = true;
     public Transform m_point1;
@@ -44,6 +44,10 @@ public class LinearPingPongMove : MonoBehaviour
             {
                 direction *= -1;
             }
+        }
+        else
+        {
+            rig2d.velocity = Vector2.zero;
         }
     }
 }
