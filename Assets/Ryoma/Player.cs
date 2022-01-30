@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
+                Jump = true;
                 direction.y = JumpPower;
             }
         }
@@ -43,13 +44,6 @@ public class Player : MonoBehaviour
         {
             Jump = false;
             direction.y = 0;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "yuka")
-        {
-            Jump = true;
         }
     }
 }
