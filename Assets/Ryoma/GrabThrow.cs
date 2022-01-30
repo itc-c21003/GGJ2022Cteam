@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class GrabThrow : MonoBehaviour
 {
-    Ball Rig;
+    public Ball Rig;
     Rigidbody2D Rigid;
-    bool Grad,GR;   
+    bool Grad,GR;
+    float Diff;
+    public bool IsGragSpirit
+    {
+        get { return GR; }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -32,16 +37,16 @@ public class GrabThrow : MonoBehaviour
     {
         if (GR)
         {
-            Rigid.position = transform.position;
+            Rigid.position = transform.position;            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Throw")
         {
-            Grad = true;
-            Rig = collision.gameObject.GetComponent<Ball>();
             Rigid = collision.gameObject.GetComponent<Rigidbody2D>();
+            Rig = collision.gameObject.GetComponent<Ball>();
+            Grad = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
