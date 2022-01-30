@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D Rig2D;
     Vector2 direction;
-    public float MaxSpeed, JumpPower,Speed, Gravity;
+    public float JumpPower,Speed, Gravity;
     public bool Jump;
     // Start is called before the first frame update
     void Start()
@@ -18,29 +18,31 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Rig2D.velocity.magnitude < MaxSpeed)
-        {
-            direction.x = Input.GetAxis("Horizontal")* Speed;
-        }
-        Rig2D.velocity = direction;
+
+        direction.x = Input.GetAxis("Horizontal")* Speed;
+        
         if (!Jump)
         {
             if (Input.GetKeyDown("space"))
             {
-                Debug.Log(Jump);
                 direction.y = JumpPower;
             }
         }
         if (Jump)
         {
-            direction.y -= Gravity;
+            direction.y -= Gravity *Time.deltaTime;
         }
+    }
+    private void FixedUpdate()
+    {
+        Rig2D.velocity = direction;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "yuka")
         {
             Jump = false;
+            direction.y = 0;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

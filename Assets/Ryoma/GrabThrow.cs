@@ -5,7 +5,7 @@ using UnityEngine;
 public class GrabThrow : MonoBehaviour
 {
     public Rigidbody2D Rig;
-    public bool Grad;
+    public bool Grad,GR;
     public float Throw = 10f;
     Vector3 force;
     // Start is called before the first frame update
@@ -18,31 +18,37 @@ public class GrabThrow : MonoBehaviour
     {
         if (Grad)
         {
-            if (Input.GetKeyDown("x"))
+            if (Input.GetKeyDown("a"))
             {
-                Rig.gameObject.transform.parent = this.gameObject.transform;
+                GR = true;
             }
-            if(Input.GetKey("x"))
+            if (Input.GetKeyUp("a"))
             {
-                Rig.position = transform.position;
-            }
-            else if (Input.GetKeyUp("x"))
-            {
-                Rig.gameObject.transform.parent = null;
-                Grad = false;
-                Rig.AddForce(force, ForceMode2D.Impulse);
+                GR = false;
+                Rig.velocity = force;
             }
         }
-
     }
-
-
+    private void FixedUpdate()
+    {
+        if (GR)
+        {
+            Rig.position = transform.position;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Throw")
         {
             Grad = true;
             Rig = collision.gameObject.GetComponent<Rigidbody2D>();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Throw")
+        {
+            Grad = false;
         }
     }
 }
