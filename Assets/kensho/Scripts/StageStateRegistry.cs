@@ -15,6 +15,8 @@ public class StageStateRegistry
 
     private HashSet<string> collectedKeys;
     private Vector3 playerSpawnPoint;
+    public int DeathCount { get; set; }
+    public float ElapsedTime { get; set; }
 
     public Vector3 PlayerSpawnPoint
     {
