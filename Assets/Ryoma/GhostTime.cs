@@ -5,7 +5,7 @@ using UnityEngine;
 public class GhostTime : MonoBehaviour
 {
     public GhostChenger ghostChenger;
-    public float Ghosttime = 30;  float Recoverytime =10,speed;
+    public float Ghosttime = 30;  float Recoverytime =15,speed;
     public GrabThrow Grab;
 
     // Start is called before the first frame update
@@ -39,5 +39,9 @@ public class GhostTime : MonoBehaviour
             ghostChenger.IsSpiritBody = false;
             Ghosttime = 0;
         }    
+    }
+    public void Recovery()
+    {
+        Ghosttime += 15;
     }
 }
