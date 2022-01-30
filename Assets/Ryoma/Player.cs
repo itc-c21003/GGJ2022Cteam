@@ -9,10 +9,10 @@ public class Player : MonoBehaviour
     public float m_gravityScale = 1.0f;
     public float m_groundCheckDistance = 0.2f;
     public Transform m_groundCheckStartPos;
-
+    public Animator anim;
     private Vector2 direction;
     private Rigidbody2D rig2d;
-
+    Vector2 Rot;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,14 @@ public class Player : MonoBehaviour
         var speed = Input.GetKey(KeyCode.LeftShift) ? m_sprintSpeed : Speed;
         direction.x = Input.GetAxis("Horizontal") * speed;
         direction.y = rig2d.velocity.y;
-
+        if(direction.x != 0)
+        {
+            anim.SetTrigger("run");
+        }        
+        if(direction.x == 0)
+        {
+            anim.SetTrigger("idol");
+        }
         if (IsGrounded())
         {
             if (Input.GetKeyDown("space"))
