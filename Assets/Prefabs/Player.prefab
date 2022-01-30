@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6460323870715287801}
   - component: {fileID: 6460323870715287798}
   - component: {fileID: 1866808269}
+  - component: {fileID: 425377938}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Ghost
@@ -191,6 +192,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9015f0e2b1d1ea84ab60edc611556a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &425377938
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6460323870715287799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bdcb90cdb4126446c99386f3baac4b36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6460323872559029253
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +258,7 @@ GameObject:
   - component: {fileID: 6460323872703740248}
   - component: {fileID: 6460323872705017043}
   - component: {fileID: 1131622795}
+  - component: {fileID: 1131622787}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -302,7 +323,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 481899762494848da81b831414964dfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -352,6 +373,7 @@ MonoBehaviour:
   m_gravityScale: 1
   m_groundCheckDistance: 0.3
   m_groundCheckStartPos: {fileID: 14946796}
+  anim: {fileID: 1131622787}
 --- !u!70 &6460323872703740242
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -426,3 +448,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9015f0e2b1d1ea84ab60edc611556a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1131622787
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6460323872703740243}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bdcb90cdb4126446c99386f3baac4b36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
