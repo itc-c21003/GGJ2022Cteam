@@ -7,10 +7,11 @@ public class Ghost : MonoBehaviour
     float MoveX,MoveY;
     public Rigidbody2D Rig;
     public float speed, PX,PY;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim.SetTrigger("ghost");
     }
 
     // Update is called once per frame

@@ -8,7 +8,7 @@ public class GhostChenger : MonoBehaviour
     public Player PL;
     public GrabThrow Grab;
     public float ghostYUp = 2;
-
+    public Animator anim;
     private bool spirit = false;
     public bool IsSpiritBody
     {
@@ -23,6 +23,7 @@ public class GhostChenger : MonoBehaviour
                 Ghost.SetActive(true);
                 PL.enabled = false;
                 Grab.enabled = false;
+                anim.SetTrigger("ghost");
             }
             else
             {
@@ -32,6 +33,7 @@ public class GhostChenger : MonoBehaviour
                 PL.enabled = true;
                 Grab.enabled = true;
                 Ghost.SetActive(false);
+                anim.SetTrigger("idol");
             }
             spirit = value;
         }
