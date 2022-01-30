@@ -14,6 +14,7 @@ public class GameUI : MonoBehaviour
     public GameObject m_resultPanel;
     public Text m_resultDeathCountText;
     public Text m_resultTimerText;
+    public Text m_resultTotalSpiritTimeText;
     public Button m_resultRestartButton;
 
     public GhostTime m_ghostTime;
@@ -58,5 +59,7 @@ public class GameUI : MonoBehaviour
         m_resultDeathCountText.text = $"Death: {StageStateRegistry.Instance.DeathCount}";
         var timeText = TimeSpan.FromSeconds(StageStateRegistry.Instance.ElapsedTime).ToString(@"mm\:ss");
         m_resultTimerText.text = $"Time: {timeText}";
+        var spTime = TimeSpan.FromSeconds(m_ghostTime.TotalGhosttime).ToString(@"mm\:ss");
+        m_resultTotalSpiritTimeText.text = $"Time spent in spirit: {spTime}";
     }
 }
