@@ -7,11 +7,11 @@ public class Ghost : MonoBehaviour
     float MoveX,MoveY;
     public Rigidbody2D Rig;
     public float speed, PX,PY;
-    public Animator anim;
+    
     // Start is called before the first frame update
     void Start()
     {
-        anim.SetTrigger("ghost");
+        
     }
 
     // Update is called once per frame
@@ -19,6 +19,14 @@ public class Ghost : MonoBehaviour
     {
         MoveX = Input.GetAxis("Horizontal");
         MoveY = Input.GetAxis("Vertical");
+        if (MoveX > 0)
+        {
+            transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 1, 0));
+        }
+        if (MoveX < 0)
+        {
+            transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 1, 0));
+        }
     }
     private void FixedUpdate()
     {
