@@ -5,7 +5,7 @@ using UnityEngine;
 public class GhostTime : MonoBehaviour
 {
     public GhostChenger ghostChenger;
-    float Ghosttime = 30,Recoverytime =10,speed;
+    public float Ghosttime = 30;  float Recoverytime =10,speed;
     public GrabThrow Grab;
 
     // Start is called before the first frame update
