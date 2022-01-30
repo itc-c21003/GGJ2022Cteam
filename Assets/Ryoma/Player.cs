@@ -33,6 +33,14 @@ public class Player : MonoBehaviour
         if(direction.x == 0)
         {
             anim.SetTrigger("idol");
+        }    
+        if(direction.x > 0)
+        {
+            transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 1, 0));
+        }      
+        if(direction.x < 0)
+        {
+            transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 1, 0));
         }
         if (IsGrounded())
         {
