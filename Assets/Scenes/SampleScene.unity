@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 250730736}
   - component: {fileID: 250730735}
   m_Layer: 0
-  m_Name: yuka (1)
-  m_TagString: yuka
+  m_Name: kabe
+  m_TagString: kabe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rig: {fileID: 0}
+  Rigid: {fileID: 0}
   Grad: 0
   GR: 0
   Throw: 10
@@ -665,7 +666,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!114 &1766147226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,6 +680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rig: {fileID: 1766147225}
+  Stop: 0
+  direction: {x: 0, y: 0}
 --- !u!1 &1866808263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6460323870715287799, guid: 8c6fb678f34fa3b4cb5f2defb124a157, type: 3}
@@ -697,6 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rig: {fileID: 0}
+  Rigid: {fileID: 0}
   Grad: 0
   GR: 0
   Throw: 10

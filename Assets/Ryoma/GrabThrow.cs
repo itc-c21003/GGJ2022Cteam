@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class GrabThrow : MonoBehaviour
 {
-    public Rigidbody2D Rig;
+    public Ball Rig;
+    public Rigidbody2D Rigid;
     public bool Grad,GR;
-    public float Throw = 10f;
-    Vector3 force;
+    public float Throw = 10f, ThrowUP;
     // Start is called before the first frame update
     void Start()
     {
-        force = new Vector3(Throw, 0.0f, 0.0f);
+
     }
     // Update is called once per frame
     void Update()
     {
         if (Grad)
         {
-            if (Input.GetKeyDown("a"))
+            if (Input.GetKeyDown("x"))
             {
                 GR = true;
             }
-            if (Input.GetKeyUp("a"))
+            if (Input.GetKeyUp("x"))
             {
                 GR = false;
-                Rig.velocity = force;
+                Rig.direction.x = Throw;
+                Rig.direction.y += ThrowUP; 
+                Rig.Stop = false;
             }
         }
     }
@@ -33,7 +35,7 @@ public class GrabThrow : MonoBehaviour
     {
         if (GR)
         {
-            Rig.position = transform.position;
+            Rigid.position = transform.position;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,7 +43,8 @@ public class GrabThrow : MonoBehaviour
         if (collision.gameObject.tag == "Throw")
         {
             Grad = true;
-            Rig = collision.gameObject.GetComponent<Rigidbody2D>();
+            Rig = collision.gameObject.GetComponent<Ball>();
+            Rigid = collision.gameObject.GetComponent<Rigidbody2D>();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
