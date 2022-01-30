@@ -29,7 +29,6 @@ public class GhostTime : MonoBehaviour
         {
             ghostChenger.IsSpiritBody = false;
             Ghosttime = 0;
-        }
-        
+        }    
     }
 }

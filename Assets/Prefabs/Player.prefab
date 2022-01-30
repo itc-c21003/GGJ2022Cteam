@@ -306,7 +306,7 @@ MonoBehaviour:
   JumpPower: 10
   Speed: 10
   Gravity: 1
-  Jump: 0
+  Jump: 1
 --- !u!70 &6460323872703740242
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -366,4 +366,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghostChenger: {fileID: 6460323872703740248}
   Ghosttime: 20
-  Recoverytime: 5
+  Recoverytime: 8
