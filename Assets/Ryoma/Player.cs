@@ -4,46 +4,49 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody2D Rig2D;
-    Vector2 direction;
-    public float JumpPower,Speed, Gravity;
-    public bool Jump;
+    public float JumpPower, Speed;
+    public float m_sprintSpeed;
+    public float m_gravityScale = 1.0f;
+    public float m_groundCheckDistance = 0.2f;
+    public Transform m_groundCheckStartPos;
+
+    private Vector2 direction;
+    private Rigidbody2D rig2d;
+
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 30;
-        Jump = true;
+        rig2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        var speed = Input.GetKey(KeyCode.LeftShift) ? m_sprintSpeed : Speed;
+        direction.x = Input.GetAxis("Horizontal") * speed;
+        direction.y = rig2d.velocity.y;
 
-        direction.x = Input.GetAxis("Horizontal")* Speed;
-        
-        if (!Jump)
+        if (IsGrounded())
         {
             if (Input.GetKeyDown("space"))
             {
-                Jump = true;
                 direction.y = JumpPower;
             }
         }
-        if (Jump)
-        {
-            direction.y -= Gravity *Time.deltaTime;
-        }
+        rig2d.velocity = direction;
     }
-    private void FixedUpdate()
+
+    public bool IsGrounded()
     {
-        Rig2D.velocity = direction;
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "yuka")
+        var hits = Physics2D.RaycastAll(m_groundCheckStartPos.position, Vector2.down, m_groundCheckDistance);
+        foreach (var hit in hits)
         {
-            Jump = false;
-            direction.y = 0;
+            if (!hit.collider.isTrigger)
+            {
+                return true;
+            }
         }
+        return false;
     }
 }
