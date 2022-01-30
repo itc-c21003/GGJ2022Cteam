@@ -270,6 +270,8 @@ GameObject:
   - component: {fileID: 116426845}
   - component: {fileID: 116426844}
   - component: {fileID: 116426843}
+  - component: {fileID: 116426847}
+  - component: {fileID: 116426848}
   m_Layer: 0
   m_Name: MoveFloor
   m_TagString: yuka
@@ -300,13 +302,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 116426841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e4985842c642bd448b5efe544e7b4ed, type: 3}
+  m_Script: {fileID: 11500000, guid: ea29ea3dafc40c44bb3759631b4643c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isActive: 1
-  m_point1: {fileID: 635541673}
-  m_point2: {fileID: 1954815407}
-  m_moveSpeed: 1
 --- !u!61 &116426844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -410,6 +408,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &116426847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116426841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4985842c642bd448b5efe544e7b4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isActive: 1
+  m_point1: {fileID: 635541673}
+  m_point2: {fileID: 1954815407}
+  m_moveSpeed: 1.5
+--- !u!50 &116426848
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116426841}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!4 &190163157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6460323872559029252, guid: 8c6fb678f34fa3b4cb5f2defb124a157, type: 3}
