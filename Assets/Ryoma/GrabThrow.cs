@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrabThrow : MonoBehaviour
 {
-    public Ball Rig;
+    Ball Rig;
     Rigidbody2D Rigid;
     bool Grad,GR;
     float Diff;
@@ -37,13 +37,15 @@ public class GrabThrow : MonoBehaviour
     {
         if (GR)
         {
-            Rigid.position = transform.position;            
+            Rigid.position = new Vector2(transform.position.x -Diff,transform.position.y);            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Throw")
         {
+            Diff = transform.position.x - collision.transform.position.x;
+            
             Rigid = collision.gameObject.GetComponent<Rigidbody2D>();
             Rig = collision.gameObject.GetComponent<Ball>();
             Grad = true;
