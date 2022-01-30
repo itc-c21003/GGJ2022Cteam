@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class GrabThrow : MonoBehaviour
 {
-    public Ball Rig;
-    public Rigidbody2D Rigid;
-    public bool Grad,GR;
-    public float Throw = 10f, ThrowUP;
+    Ball Rig;
+    Rigidbody2D Rigid;
+    bool Grad,GR;   
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +24,7 @@ public class GrabThrow : MonoBehaviour
             if (Input.GetKeyUp("x"))
             {
                 GR = false;
-                Rig.direction.x = Throw;
-                Rig.direction.y += ThrowUP; 
-                Rig.Stop = false;
+                Rig.Vector = true;
             }
         }
     }

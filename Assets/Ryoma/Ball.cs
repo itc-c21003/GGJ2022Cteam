@@ -5,8 +5,23 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public Rigidbody2D Rig;
-    public bool Stop;
-    public Vector2 direction;
+    bool Stop,Throw;
+    Vector2 direction;
+    public float ThrowX = 10f, ThrowY;
+    public bool Vector
+    {
+        get { return Throw; }
+        set
+        {
+            if (value)
+            {
+                direction.x = ThrowX;
+                direction.y += ThrowY;
+                Stop = false;
+            }
+            Throw = value;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
