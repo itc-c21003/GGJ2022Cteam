@@ -6,6 +6,7 @@ public class GhostChenger : MonoBehaviour
 {
     public GameObject Ghost,Player;
     public Player PL;
+    public GrabThrow Grab;
     public float ghostYUp = 2;
 
     private bool spirit = false;
@@ -21,6 +22,7 @@ public class GhostChenger : MonoBehaviour
             {
                 Ghost.SetActive(true);
                 PL.enabled = false;
+                Grab.enabled = false;
             }
             else
             {
@@ -28,6 +30,7 @@ public class GhostChenger : MonoBehaviour
                 float PY = Player.transform.position.y;
                 Ghost.transform.position = new Vector2(PX, PY + ghostYUp);
                 PL.enabled = true;
+                Grab.enabled = true;
                 Ghost.SetActive(false);
             }
             spirit = value;

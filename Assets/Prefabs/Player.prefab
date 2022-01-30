@@ -191,7 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9015f0e2b1d1ea84ab60edc611556a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rig: {fileID: 0}
 --- !u!1 &6460323872559029253
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +396,7 @@ MonoBehaviour:
   Ghost: {fileID: 6460323870715287799}
   Player: {fileID: 6460323872703740243}
   PL: {fileID: 6460323872703740245}
+  Grab: {fileID: 1131622795}
   ghostYUp: 2
 --- !u!114 &6460323872705017043
 MonoBehaviour:
@@ -412,6 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghostChenger: {fileID: 6460323872703740248}
   Ghosttime: 20
+  TotalGhosttime: 0
   Grab: {fileID: 1866808269}
 --- !u!114 &1131622795
 MonoBehaviour:
@@ -425,4 +426,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9015f0e2b1d1ea84ab60edc611556a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rig: {fileID: 0}
